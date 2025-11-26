@@ -1,4 +1,4 @@
-package com.example.demo_springboot4.nullsafe;
+package com.example.demospringboot4.nullsafe;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
