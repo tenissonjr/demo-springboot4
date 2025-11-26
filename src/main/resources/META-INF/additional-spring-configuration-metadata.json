@@ -1,0 +1,10 @@
+{
+  "properties": [
+    {
+      "name": "spring.validation.use-lombok-nonnull",
+      "type": "java.lang.Boolean",
+      "description": "Treat Lombok's @NonNull as a Bean Validation @NotNull hint during method validation.",
+      "defaultValue": false
+    }
+  ]
+}
