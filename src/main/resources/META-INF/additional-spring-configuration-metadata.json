@@ -14,5 +14,20 @@
     "name": "bcnpj.base.url",
     "type": "java.lang.String",
     "description": "URL base dos serviços do B-CNPJ da DataPrev"
+  },
+  {
+    "name": "bcnpj.credentials.username",
+    "type": "java.lang.String",
+    "description": "A description for 'bcnpj.credentials.username'"
+  },
+  {
+    "name": "bcnpj.credentials.password",
+    "type": "java.lang.String",
+    "description": "A description for 'bcnpj.credentials.password'"
+  }
+]}{
+    "name": "bcnpj.credentials.password",
+    "type": "java.lang.String",
+    "description": "A description for 'bcnpj.credentials.password'"
   }
 ]}

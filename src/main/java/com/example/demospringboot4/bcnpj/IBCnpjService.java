@@ -7,7 +7,7 @@ import org.springframework.web.service.annotation.HttpExchange;
 import com.example.demospringboot4.bcnpj.dto.BCnpjResponseDTO;
 
 @HttpExchange("/api/v1/cnpj")
-public interface BCnpjService {
+public interface IBCnpjService {
 
     @GetExchange("/{cnpj}")
     BCnpjResponseDTO consultarCnpj(@PathVariable String cnpj);

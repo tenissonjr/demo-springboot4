@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Record que mapeia a estrutura do JSON fornecido.
+ * Record que mapeia a estrutura do JSON fornecido pelo .
  */
 public record BCnpjResponseDTO(
     Empresa empresa
@@ -60,12 +60,9 @@ public record BCnpjResponseDTO(
     ) {}
 
     public record SimplesMei(
-        List<Periodo> mei,
-        List<Periodo> simples
+        List<PeriodoDTO> mei,
+        List<PeriodoDTO> simples
     ) {
-        public record Periodo(
-            String dataFim,
-            String dataInicio
-        ) {}
+       
     }
 }

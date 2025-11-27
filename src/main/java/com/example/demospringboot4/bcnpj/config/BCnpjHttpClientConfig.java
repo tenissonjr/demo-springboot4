@@ -10,13 +10,19 @@ import org.springframework.web.client.RestClient;
 import org.springframework.web.client.support.RestClientAdapter;
 import org.springframework.web.service.invoker.HttpServiceProxyFactory;
 
-import com.example.demospringboot4.bcnpj.BCnpjService;
+import com.example.demospringboot4.bcnpj.IBCnpjService;
 
 @Configuration
 class BCnpjHttpClientConfig {
 
     @Value("${bcnpj.base.url}")
     private String bcnpjBaseUrl;
+
+    @Value("${bcnpj.credentials.username}")
+    private String username;
+
+    @Value("${bcnpj.credentials.password}")
+    private String password;
 
     private String encodeBasic(String username, String password) {
         String credentials = username + ":" + password;
@@ -25,22 +31,19 @@ class BCnpjHttpClientConfig {
 
 
     @Bean
-    BCnpjService bCnpjService() {
+    IBCnpjService bCnpjService() {
 
-        String username = "bcnpj"; // Replace with your actual username
-        String password = "app#2025*CD"; // Replace with your actual password
-
-
-        var restClient =  RestClient.builder()
+        // Configura o RestClient com a URL base da API do BCnpj
+        var restClient = RestClient.builder()
                 .baseUrl(bcnpjBaseUrl)
-                 .defaultHeader(HttpHeaders.AUTHORIZATION, encodeBasic(username, password))
+                .defaultHeader(HttpHeaders.AUTHORIZATION, encodeBasic(username, password))
                 .build();
 
-        var httpServiceProxyFactory =HttpServiceProxyFactory.builder()
+        // Retorna um objeto criado pelo Spring Boot que implementa a interface IBCnpjService
+        return HttpServiceProxyFactory.builder()
                 .exchangeAdapter(RestClientAdapter.create(restClient))
-                .build();                
-        
-        return httpServiceProxyFactory.createClient(BCnpjService.class);
+                .build()
+                .createClient(IBCnpjService.class);
     }
 
 }

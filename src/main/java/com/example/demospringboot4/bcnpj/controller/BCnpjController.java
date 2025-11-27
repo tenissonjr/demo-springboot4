@@ -5,8 +5,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demospringboot4.bcnpj.BCnpjService;
+import com.example.demospringboot4.bcnpj.IBCnpjService;
 import com.example.demospringboot4.bcnpj.dto.BCnpjResponseDTO;
+import com.example.demospringboot4.bcnpj.dto.CnpjCompletoDTO;
 
 
 
@@ -15,14 +16,20 @@ import com.example.demospringboot4.bcnpj.dto.BCnpjResponseDTO;
 @RequestMapping("/api/cnpj")
 public class BCnpjController {
 
-    private final BCnpjService bCnpjService;
+    private final IBCnpjService bCnpjService;
 
-    public BCnpjController(BCnpjService bCnpjService) {
+    public BCnpjController(IBCnpjService bCnpjService) {
         this.bCnpjService = bCnpjService;
     }
 
-    @GetMapping("/{cnpj}")
-    public BCnpjResponseDTO getCnpj(@PathVariable String cnpj) {
+    @GetMapping("/{cnpj}/original")
+    public BCnpjResponseDTO consultarCnpjOriginal(@PathVariable String cnpj) {
         return bCnpjService.consultarCnpj(cnpj);
     }
+
+    @GetMapping("/{cnpj}")
+    public CnpjCompletoDTO consultarCnpj(@PathVariable String cnpj) {
+        return CnpjCompletoDTO.valueOf(bCnpjService.consultarCnpj(cnpj));
+    }
+
 }

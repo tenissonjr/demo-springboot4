@@ -7,7 +7,7 @@ import org.springframework.web.client.RestClient;
 import org.springframework.web.client.support.RestClientAdapter;
 import org.springframework.web.service.invoker.HttpServiceProxyFactory;
 
-import com.example.demospringboot4.ibge.service.IbgeLocalidadesService;
+import com.example.demospringboot4.ibge.interfaces.IIbgeLocalidadesService;
 
 @Configuration
 class IbgeHttpClientConfig {
@@ -16,17 +16,17 @@ class IbgeHttpClientConfig {
     private String ibgeBaseUrl;
 
     @Bean
-    IbgeLocalidadesService ibgeLocalidadesService() {
-
+    IIbgeLocalidadesService ibgeLocalidadesService() {
+        //Configura o RestClient com a URL base da API do IBGE
         var restClient =  RestClient.builder()
                 .baseUrl(ibgeBaseUrl)
                 .build();
 
-        var httpServiceProxyFactory =HttpServiceProxyFactory.builder()
+        //Retorna objeto criado pelo StringBoot que implementa a interface IIbgeLocalidadesService        
+        return HttpServiceProxyFactory.builder()
                 .exchangeAdapter(RestClientAdapter.create(restClient))
-                .build();                
-        
-        return httpServiceProxyFactory.createClient(IbgeLocalidadesService.class);
+                .build()
+                .createClient(IIbgeLocalidadesService.class);
     }
 
 }

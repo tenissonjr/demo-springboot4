@@ -9,3 +9,8 @@ ibge:
 bcnpj:
   base:
     url: https://b-cnpj.camara.leg.br
+  credentials:
+    username: bcnpj 
+    password: app#2025*CD
+
+

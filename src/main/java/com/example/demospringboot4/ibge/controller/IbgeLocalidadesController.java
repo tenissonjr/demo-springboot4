@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demospringboot4.ibge.dto.IbgeEstadoResponseDTO;
 import com.example.demospringboot4.ibge.dto.IbgePaisResponseDTO;
-import com.example.demospringboot4.ibge.service.IbgeLocalidadesService;
+import com.example.demospringboot4.ibge.interfaces.IIbgeLocalidadesService;
 
 /**
  * Controlador REST para acessar os dados de localidades fornecidos pela API do IBGE.
@@ -18,14 +18,14 @@ import com.example.demospringboot4.ibge.service.IbgeLocalidadesService;
 @RequestMapping("/api/ibge")
 class IbgeLocalidadesController {
 
-    private final IbgeLocalidadesService ibgeLocalidadesService;
+    private final IIbgeLocalidadesService ibgeLocalidadesService;
 
     /**
      * Construtor para injetar o serviço de localidades do IBGE.
      * 
      * @param ibgeLocalidadesService Serviço responsável por acessar os dados do IBGE.
      */
-    IbgeLocalidadesController(IbgeLocalidadesService ibgeLocalidadesService) {
+    IbgeLocalidadesController(IIbgeLocalidadesService ibgeLocalidadesService) {
         this.ibgeLocalidadesService = ibgeLocalidadesService;
     }
 
