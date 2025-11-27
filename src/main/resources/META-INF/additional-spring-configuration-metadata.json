@@ -9,5 +9,10 @@
     "name": "ibge.base.url",
     "type": "java.lang.String",
     "description": "URL base dos serviços do IBGE"
+  },
+  {
+    "name": "bcnpj.base.url",
+    "type": "java.lang.String",
+    "description": "URL base dos serviços do B-CNPJ da DataPrev"
   }
 ]}

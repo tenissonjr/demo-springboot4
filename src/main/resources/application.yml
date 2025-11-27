@@ -6,3 +6,6 @@ spring:
 ibge:
   base:
     url: https://servicodados.ibge.gov.br
+bcnpj:
+  base:
+    url: https://b-cnpj.camara.leg.br
