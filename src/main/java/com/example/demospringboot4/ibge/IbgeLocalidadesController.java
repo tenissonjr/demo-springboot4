@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/ibge/countries")
+@RequestMapping("/api/ibge/paises")
 class IbgeLocalidadesController {
 
     private final IbgeLocalidadesService ibgeLocalidadesService;
