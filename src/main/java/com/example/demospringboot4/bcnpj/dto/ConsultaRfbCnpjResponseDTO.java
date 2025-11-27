@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.example.demospringboot4.bcnpj.dto.BCnpjResponseDTO.Estabelecimento;
 
-public record CnpjCompletoDTO(
+public record ConsultaRfbCnpjResponseDTO(
 	//Empresa
     String cnpj,
     String nomeEmpresarial,
@@ -31,11 +31,11 @@ public record CnpjCompletoDTO(
 ) {
 
 
-    public static CnpjCompletoDTO valueOf(BCnpjResponseDTO bcnpjResponseDTO) {
+    public static ConsultaRfbCnpjResponseDTO valueOf(BCnpjResponseDTO bcnpjResponseDTO) {
 		String cnpj =  bcnpjResponseDTO.estabelecimentos().keySet().stream().findFirst().orElseThrow(() -> new IllegalArgumentException("Estabelecimento não encontrado"));
         Estabelecimento estabelecimento = bcnpjResponseDTO.estabelecimentos().values().stream().findFirst().orElseThrow(()->new IllegalArgumentException("Estabelecimento não encontrado"));
 
-        return new CnpjCompletoDTO(
+        return new ConsultaRfbCnpjResponseDTO(
 			//Empresa
 			cnpj,
 			bcnpjResponseDTO.empresa().nomeEmpresarial(),

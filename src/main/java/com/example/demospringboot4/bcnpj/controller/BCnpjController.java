@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demospringboot4.bcnpj.IBCnpjService;
 import com.example.demospringboot4.bcnpj.dto.BCnpjResponseDTO;
-import com.example.demospringboot4.bcnpj.dto.CnpjCompletoDTO;
+import com.example.demospringboot4.bcnpj.dto.ConsultaRfbCnpjResponseDTO;
 
 
 
@@ -28,8 +28,8 @@ public class BCnpjController {
     }
 
     @GetMapping("/{cnpj}")
-    public CnpjCompletoDTO consultarCnpj(@PathVariable String cnpj) {
-        return CnpjCompletoDTO.valueOf(bCnpjService.consultarCnpj(cnpj));
+    public ConsultaRfbCnpjResponseDTO consultarCnpj(@PathVariable String cnpj) {
+        return ConsultaRfbCnpjResponseDTO.valueOf(bCnpjService.consultarCnpj(cnpj));
     }
 
 }
