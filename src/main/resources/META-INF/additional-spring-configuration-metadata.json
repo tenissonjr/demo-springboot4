@@ -1,10 +1,13 @@
-{
-  "properties": [
-    {
-      "name": "spring.validation.use-lombok-nonnull",
-      "type": "java.lang.Boolean",
-      "description": "Treat Lombok's @NonNull as a Bean Validation @NotNull hint during method validation.",
-      "defaultValue": false
-    }
-  ]
-}
+{"properties": [
+  {
+    "name": "spring.validation.use-lombok-nonnull",
+    "type": "java.lang.Boolean",
+    "description": "Treat Lombok's @NonNull as a Bean Validation @NotNull hint during method validation.",
+    "defaultValue": false
+  },
+  {
+    "name": "ibge.base.url",
+    "type": "java.lang.String",
+    "description": "URL base dos serviços do IBGE"
+  }
+]}

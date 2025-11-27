@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: demo-springboot4
+  validation:
+    use-lombok-nonnull: true
+ibge:
+  base:
+    url: https://servicodados.ibge.gov.br
