@@ -8,46 +8,38 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demospringboot4.bcnpj.IBCnpjHttpClient;
-import com.example.demospringboot4.bcnpj.dto.BCnpjResponseDTO;
-import com.example.demospringboot4.bcnpj.dto.ConsultaRfbCnpjResponseDTO;
+import com.example.demospringboot4.bcnpj.dto.ConsultaCnpjResponseDTO;
+import com.example.demospringboot4.bcnpj.interfaces.ICnpjService;
 import com.example.demospringboot4.bcnpj.views.CnpjViews;
 import com.fasterxml.jackson.annotation.JsonView;
-
-
-
 
 @RestController
 @RequestMapping("/api/cnpj")
 @ConcurrencyLimit(value = 5)
-public class BCnpjController {
+public class BCnpjController  {
 
     private final Logger log = LoggerFactory.getLogger(BCnpjController.class);
 
-    private final IBCnpjHttpClient bCnpjHttpClient;
+    private final ICnpjService cnpjService;
 
-    public BCnpjController(IBCnpjHttpClient bCnpjService) {
-        this.bCnpjHttpClient = bCnpjService;
+    public BCnpjController(ICnpjService cnpjService) {
+        this.cnpjService = cnpjService;
     }
 
-    @GetMapping("/{cnpj}/original")
-    public BCnpjResponseDTO consultarCnpjOriginal(@PathVariable String cnpj) {
-        log.info("Consultando dados originais CNPJ: {}", cnpj);
-        return bCnpjHttpClient.consultarCnpj(cnpj);
-    }
 
     @GetMapping("/{cnpj}/basico")
     @JsonView(CnpjViews.Basico.class)
-    public ConsultaRfbCnpjResponseDTO consultarCnpjBasico(@PathVariable String cnpj) {
+    public ConsultaCnpjResponseDTO consultarCnpjBasico(@PathVariable String cnpj) {
         log.info("Consultando dados básicos do  CNPJ: {}", cnpj);
-        return ConsultaRfbCnpjResponseDTO.valueOf(bCnpjHttpClient.consultarCnpj(cnpj));
+        return cnpjService.consultarCnpj(cnpj);
     }
+
 
     @GetMapping("/{cnpj}/completo")
     @JsonView(CnpjViews.Completo.class)
-    public ConsultaRfbCnpjResponseDTO consultarCnpjCompleto(@PathVariable String cnpj) {
+    public ConsultaCnpjResponseDTO consultarCnpjCompleto(@PathVariable String cnpj) {
         log.info("Consultando dados completos do CNPJ: {}", cnpj);
-        return ConsultaRfbCnpjResponseDTO.valueOf(bCnpjHttpClient.consultarCnpj(cnpj));
+        return cnpjService.consultarCnpj(cnpj);
     }
 
 

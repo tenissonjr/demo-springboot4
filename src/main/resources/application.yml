@@ -8,9 +8,9 @@ ibge:
     url: https://servicodados.ibge.gov.br
 bcnpj:
   base:
-    url: 
+    url: ${bcnpj_url}
   credentials:
-    username: 
-    password: 
+    username: ${bcnpj_username}
+    password: ${bcnpj_password}
 
 

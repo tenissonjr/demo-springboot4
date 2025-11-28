@@ -2,11 +2,11 @@ package com.example.demospringboot4.bcnpj.dto;
 
 import java.util.List;
 
-import com.example.demospringboot4.bcnpj.dto.BCnpjResponseDTO.Estabelecimento;
+import com.example.demospringboot4.bcnpj.dto.ConsultaCnpjDataPrevResponseDTO.Estabelecimento;
 import com.example.demospringboot4.bcnpj.views.CnpjViews;
 import com.fasterxml.jackson.annotation.JsonView;
 
-public record ConsultaRfbCnpjResponseDTO(
+public record ConsultaCnpjResponseDTO(
 	//Empresa
      @JsonView(CnpjViews.Basico.class) String cnpj,
      @JsonView(CnpjViews.Basico.class) String nomeEmpresarial,
@@ -34,11 +34,11 @@ public record ConsultaRfbCnpjResponseDTO(
 ) {
 
 
-    public static ConsultaRfbCnpjResponseDTO valueOf(BCnpjResponseDTO bcnpjResponseDTO) {
+    public static ConsultaCnpjResponseDTO valueOf(ConsultaCnpjDataPrevResponseDTO bcnpjResponseDTO) {
 		String cnpj =  bcnpjResponseDTO.estabelecimentos().keySet().stream().findFirst().orElseThrow(() -> new IllegalArgumentException("Estabelecimento não encontrado"));
         Estabelecimento estabelecimento = bcnpjResponseDTO.estabelecimentos().values().stream().findFirst().orElseThrow(()->new IllegalArgumentException("Estabelecimento não encontrado"));
 
-        return new ConsultaRfbCnpjResponseDTO(
+        return new ConsultaCnpjResponseDTO(
 			//Empresa
 			cnpj,
 			bcnpjResponseDTO.empresa().nomeEmpresarial(),

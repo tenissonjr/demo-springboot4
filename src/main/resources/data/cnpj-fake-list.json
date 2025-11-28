@@ -1,0 +1,103 @@
+[
+    {
+        "empresa": {
+            "porteEmpresa": "01",
+            "capitalSocial": "00000010000000",
+            "cpfResponsavel": "09507538909",
+            "nomeEmpresarial": "STARK INDUSTRIES - TONY STARK",
+            "naturezaJuridica": "2135",
+            "qualificacaoResponsavel": "50"
+        },
+        "estabelecimentos": {
+            "48737295000100": {
+                "uf": "NY",
+                "cep": "10001000",
+                "ddd1": "48",
+                "ddd2": "",
+                "pais": "USA",
+                "email": "contact@starkindustries.com",
+                "bairro": "MIDTOWN",
+                "numero": "10880",
+                "municipio": "STARK_TOWER",
+                "telefone1": "91583526",
+                "telefone2": "",
+                "cnaeFiscal": "7319002",
+                "logradouro": "STARK TOWER AVENUE",
+                "complemento": "PENTHOUSE",
+                "dataCadastro": "20221127",
+                "nomeFantasia": "STARK TOWER",
+                "cidadeExterior": "",
+                "tipoLogradouro": "AVENIDA",
+                "cnaesSecundarias": [
+                    "5811500",
+                    "8599605",
+                    "8599604",
+                    "5229099",
+                    "4520001"
+                ],
+                "situacaoEspecial": "",
+                "situacaoCadastral": "02",
+                "dataSituacaoEspecial": "",
+                "dataSituacaoCadastral": "20221127",
+                "motivoSituacaoCadastral": "00",
+                "identificadorMatrizFilial": "1"
+            }
+        },
+        "socios": null,
+        "simplesMei": {
+            "mei": [
+                {
+                    "dataFim": "00000000",
+                    "dataInicio": "20221127"
+                }
+            ],
+            "simples": [
+                {
+                    "dataFim": "00000000",
+                    "dataInicio": "20221127"
+                }
+            ]
+        }
+    },
+    {
+        "empresa": {
+            "porteEmpresa": "05",
+            "capitalSocial": "00000000000000",
+            "cpfResponsavel": "00574104372",
+            "nomeEmpresarial": "WAYNE ENTERPRISES - BRUCE WAYNE",
+            "naturezaJuridica": "2135",
+            "qualificacaoResponsavel": "50"
+        },
+        "estabelecimentos": {
+            "07328560000119": {
+                "uf": "GOTHAM",
+                "cep": "60020030",
+                "ddd1": "",
+                "ddd2": "",
+                "pais": "USA",
+                "email": "",
+                "bairro": "DOWNTOWN GOTHAM",
+                "numero": "703",
+                "municipio": "WAYNE_TOWER",
+                "telefone1": "",
+                "telefone2": "",
+                "cnaeFiscal": "4781400",
+                "logradouro": "WAYNE TOWER STREET",
+                "complemento": "",
+                "dataCadastro": "19831118",
+                "nomeFantasia": "WAYNE TOWER",
+                "cidadeExterior": "",
+                "tipoLogradouro": "RUA",
+                "cnaesSecundarias": null,
+                "situacaoEspecial": "",
+                "situacaoCadastral": "08",
+                "dataSituacaoEspecial": "",
+                "dataSituacaoCadastral": "20081231",
+                "motivoSituacaoCadastral": "71",
+                "identificadorMatrizFilial": "1"
+            }
+        },
+        "socios": null,
+        "simplesMei": null
+    }
+]

@@ -10,7 +10,7 @@ import org.springframework.web.client.RestClient;
 import org.springframework.web.client.support.RestClientAdapter;
 import org.springframework.web.service.invoker.HttpServiceProxyFactory;
 
-import com.example.demospringboot4.bcnpj.IBCnpjHttpClient;
+import com.example.demospringboot4.bcnpj.interfaces.ICnpjDataPrevHttpClient;
 
 @Configuration
 class BCnpjHttpClientConfig {
@@ -31,7 +31,7 @@ class BCnpjHttpClientConfig {
 
 
     @Bean
-    IBCnpjHttpClient bCnpjHttpClient() {
+    ICnpjDataPrevHttpClient bCnpjHttpClient() {
 
         // Configura o RestClient com a URL base da API do BCnpj
         var restClient = RestClient.builder()
@@ -43,7 +43,7 @@ class BCnpjHttpClientConfig {
         return HttpServiceProxyFactory.builder()
                 .exchangeAdapter(RestClientAdapter.create(restClient))
                 .build()
-                .createClient(IBCnpjHttpClient.class);
+                .createClient(ICnpjDataPrevHttpClient.class);
     }
 
 }
