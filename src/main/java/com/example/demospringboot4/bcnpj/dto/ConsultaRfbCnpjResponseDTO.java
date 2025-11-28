@@ -3,31 +3,34 @@ package com.example.demospringboot4.bcnpj.dto;
 import java.util.List;
 
 import com.example.demospringboot4.bcnpj.dto.BCnpjResponseDTO.Estabelecimento;
+import com.example.demospringboot4.bcnpj.views.CnpjViews;
+import com.fasterxml.jackson.annotation.JsonView;
 
 public record ConsultaRfbCnpjResponseDTO(
 	//Empresa
-    String cnpj,
-    String nomeEmpresarial,
-    String naturezaJuridica,
-    String qualificacaoResponsavel,
-    String porteEmpresa,
-    String capitalSocial,
+     @JsonView(CnpjViews.Basico.class) String cnpj,
+     @JsonView(CnpjViews.Basico.class) String nomeEmpresarial,
+     @JsonView(CnpjViews.Basico.class) String naturezaJuridica,
+     @JsonView(CnpjViews.Basico.class) String qualificacaoResponsavel,
+     @JsonView(CnpjViews.Basico.class) String porteEmpresa,
+     @JsonView(CnpjViews.Basico.class)String capitalSocial,
 	//Estabelecimento
-    String nomeFantasia,
-    String situacaoCadastral,
-    String cnaeFiscal,
-    List<String> cnaesSecundarias,
-    String logradouro,
-    String bairro,
-    String uf,
-    String cep,
-    String municipio,
-    String pais,
-    String ddd,
+     @JsonView(CnpjViews.Basico.class) String nomeFantasia,
+     @JsonView(CnpjViews.Basico.class) String situacaoCadastral,
+     @JsonView(CnpjViews.Basico.class) String cnaeFiscal,
+
+     @JsonView(CnpjViews.Completo.class) List<String> cnaesSecundarias,
+     @JsonView(CnpjViews.Completo.class) String logradouro,
+     @JsonView(CnpjViews.Completo.class) String bairro,
+     @JsonView(CnpjViews.Completo.class)String uf,
+     @JsonView(CnpjViews.Completo.class)String cep,
+     @JsonView(CnpjViews.Completo.class)String municipio,
+     @JsonView(CnpjViews.Completo.class)String pais,
+     @JsonView(CnpjViews.Completo.class)String ddd,
 	//Mei
-    List<PeriodoDTO> mei,
+     @JsonView(CnpjViews.Completo.class)List<PeriodoDTO> mei,
 	//Simples Nacional
-    List<PeriodoDTO> simplesNacional
+     @JsonView(CnpjViews.Completo.class)List<PeriodoDTO> simplesNacional
 ) {
 
 

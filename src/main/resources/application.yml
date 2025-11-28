@@ -8,9 +8,9 @@ ibge:
     url: https://servicodados.ibge.gov.br
 bcnpj:
   base:
-    url: https://b-cnpj.camara.leg.br
+    url: 
   credentials:
-    username: bcnpj 
-    password: app#2025*CD
+    username: 
+    password: 
 
 

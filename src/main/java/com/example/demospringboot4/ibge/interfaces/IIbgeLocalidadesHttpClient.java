@@ -13,7 +13,7 @@ import com.example.demospringboot4.ibge.dto.IbgePaisResponseDTO;
  * Disponibiliza métodos para listar países e estados.
  */
 @HttpExchange("/api/v1/localidades")
-public interface IIbgeLocalidadesService {
+public interface IIbgeLocalidadesHttpClient {
 
     /**
      * Recupera a lista de países disponíveis na API do IBGE.
