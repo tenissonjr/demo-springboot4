@@ -9,38 +9,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demospringboot4.bcnpj.dto.ConsultaCnpjResponseDTO;
-import com.example.demospringboot4.bcnpj.interfaces.ICnpjService;
-import com.example.demospringboot4.bcnpj.views.CnpjViews;
-import com.fasterxml.jackson.annotation.JsonView;
+import com.example.demospringboot4.bcnpj.service.CnpjService;
 
 @RestController
 @RequestMapping("/api/cnpj")
 @ConcurrencyLimit(value = 5)
-public class BCnpjController  {
+public class BCnpjController {
 
     private final Logger log = LoggerFactory.getLogger(BCnpjController.class);
 
-    private final ICnpjService cnpjService;
+    private final CnpjService cnpjService;
 
-    public BCnpjController(ICnpjService cnpjService) {
+    public BCnpjController(CnpjService cnpjService) {
         this.cnpjService = cnpjService;
     }
 
-
     @GetMapping("/{cnpj}/basico")
-    @JsonView(CnpjViews.Basico.class)
     public ConsultaCnpjResponseDTO consultarCnpjBasico(@PathVariable String cnpj) {
-        log.info("Consultando dados básicos do  CNPJ: {}", cnpj);
-        return cnpjService.consultarCnpj(cnpj);
+        log.info("Delegando a consulta de dados básicos do  CNPJ: {}", cnpj);
+        return cnpjService.consultarCnpjBasico(cnpj);
     }
-
 
     @GetMapping("/{cnpj}/completo")
-    @JsonView(CnpjViews.Completo.class)
     public ConsultaCnpjResponseDTO consultarCnpjCompleto(@PathVariable String cnpj) {
-        log.info("Consultando dados completos do CNPJ: {}", cnpj);
-        return cnpjService.consultarCnpj(cnpj);
+        log.info("Delegando a consulta de dados completos do CNPJ: {}", cnpj);
+        return cnpjService.consultarCnpjCompleto(cnpj);
     }
-
 
 }

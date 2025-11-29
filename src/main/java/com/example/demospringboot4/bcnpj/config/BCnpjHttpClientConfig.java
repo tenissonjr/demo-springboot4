@@ -5,12 +5,13 @@ import java.util.Base64;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.http.HttpHeaders;
 import org.springframework.web.client.RestClient;
 import org.springframework.web.client.support.RestClientAdapter;
 import org.springframework.web.service.invoker.HttpServiceProxyFactory;
 
-import com.example.demospringboot4.bcnpj.interfaces.ICnpjDataPrevHttpClient;
+import com.example.demospringboot4.bcnpj.interfaces.IDataPrevCnpjHttpClient;
 
 @Configuration
 class BCnpjHttpClientConfig {
@@ -30,8 +31,9 @@ class BCnpjHttpClientConfig {
     }
 
 
+    @Profile("prd")
     @Bean
-    ICnpjDataPrevHttpClient bCnpjHttpClient() {
+    public IDataPrevCnpjHttpClient dataPrevCnpjHttpClient() {
 
         // Configura o RestClient com a URL base da API do BCnpj
         var restClient = RestClient.builder()
@@ -43,7 +45,7 @@ class BCnpjHttpClientConfig {
         return HttpServiceProxyFactory.builder()
                 .exchangeAdapter(RestClientAdapter.create(restClient))
                 .build()
-                .createClient(ICnpjDataPrevHttpClient.class);
+                .createClient(IDataPrevCnpjHttpClient.class);
     }
 
 }

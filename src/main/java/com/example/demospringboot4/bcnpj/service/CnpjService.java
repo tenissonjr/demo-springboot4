@@ -3,36 +3,44 @@ package com.example.demospringboot4.bcnpj.service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import org.springframework.context.annotation.Profile;
+import org.springframework.validation.annotation.Validated;
 
-import com.example.demospringboot4.bcnpj.dto.ConsultaCnpjDataPrevResponseDTO;
 import com.example.demospringboot4.bcnpj.dto.ConsultaCnpjResponseDTO;
-import com.example.demospringboot4.bcnpj.interfaces.ICnpjDataPrevHttpClient;
-import com.example.demospringboot4.bcnpj.interfaces.ICnpjService;
+import com.example.demospringboot4.bcnpj.dto.ConsultaDataPrevCnpjResponseDTO;
+import com.example.demospringboot4.bcnpj.interfaces.IDataPrevCnpjHttpClient;
+import com.example.demospringboot4.bcnpj.views.CnpjViews;
+import com.example.demospringboot4.bcnpj.validation.CnpjValido;
+import com.fasterxml.jackson.annotation.JsonView;
 
-@Profile("prd")
+
 @Service
-public class CnpjService implements ICnpjService {
+@Validated
+public class CnpjService  {
     
     private final Logger log = LoggerFactory.getLogger(CnpjService.class);
 
-     private final ICnpjDataPrevHttpClient bCnpjHttpClient;
+     private final IDataPrevCnpjHttpClient bCnpjHttpClient;
 
-    public CnpjService(ICnpjDataPrevHttpClient bCnpjHttpClient) {
+    public CnpjService(IDataPrevCnpjHttpClient bCnpjHttpClient) {
         this.bCnpjHttpClient = bCnpjHttpClient;
     }
 
-    public ConsultaCnpjDataPrevResponseDTO consultarCnpjOriginal(String cnpj) {
+    public ConsultaDataPrevCnpjResponseDTO consultarCnpjOriginal(@CnpjValido String cnpj) {
         log.info("Consultando dados originais CNPJ: {}", cnpj);
         return bCnpjHttpClient.consultarCnpjDataPrev(cnpj);
     }
 
-    @Override
-    public ConsultaCnpjResponseDTO consultarCnpj(String cnpj) {
+    @JsonView(CnpjViews.Basico.class)
+    public ConsultaCnpjResponseDTO consultarCnpjBasico(@CnpjValido String cnpj) {
         log.info("Transformando dados  do  CNPJ: {}", cnpj);
-        return ConsultaCnpjResponseDTO.valueOf(consultarCnpjOriginal(cnpj));
+        return ConsultaCnpjResponseDTO.valueOf(this.consultarCnpjOriginal(cnpj));
     }
 
+    @JsonView(CnpjViews.Completo.class)
+    public ConsultaCnpjResponseDTO consultarCnpjCompleto(@CnpjValido String cnpj) {
+        log.info("Transformando dados  do  CNPJ: {}", cnpj);
+        return ConsultaCnpjResponseDTO.valueOf(this.consultarCnpjOriginal(cnpj));
+    }
 
 
     

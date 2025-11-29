@@ -4,7 +4,7 @@
             "porteEmpresa": "01",
             "capitalSocial": "00000010000000",
             "cpfResponsavel": "09507538909",
-            "nomeEmpresarial": "STARK INDUSTRIES - TONY STARK",
+            "nomeEmpresarial": "STARK INDUSTRIES",
             "naturezaJuridica": "2135",
             "qualificacaoResponsavel": "50"
         },
@@ -64,7 +64,7 @@
             "porteEmpresa": "05",
             "capitalSocial": "00000000000000",
             "cpfResponsavel": "00574104372",
-            "nomeEmpresarial": "WAYNE ENTERPRISES - BRUCE WAYNE",
+            "nomeEmpresarial": "WAYNE ENTERPRISES",
             "naturezaJuridica": "2135",
             "qualificacaoResponsavel": "50"
         },
@@ -100,4 +100,153 @@
         "socios": null,
         "simplesMei": null
     }
+    ,
+    {
+        "empresa": {
+            "porteEmpresa": "01",
+            "capitalSocial": "00000010000000",
+            "cpfResponsavel": "09507538909",
+            "nomeEmpresarial": "WAKANDA DESIGN GROUP",
+            "naturezaJuridica": "2135",
+            "qualificacaoResponsavel": "50"
+        },
+        "estabelecimentos": {
+            "55919135000147": {
+                "uf": "WK",
+                "cep": "99999900",
+                "ddd1": "00",
+                "ddd2": "",
+                "pais": "WAKANDA",
+                "email": "contact@wakanda-tech.wk",
+                "bairro": "GOLDEN CITY",
+                "numero": "42",
+                "municipio": "BIRNIN_ZANA",
+                "telefone1": "00000000",
+                "telefone2": "",
+                "cnaeFiscal": "7319002",
+                "logradouro": "VIBRANIUM RESEARCH AVENUE",
+                "complemento": "LABORATÓRIO REAL",
+                "dataCadastro": "20221127",
+                "nomeFantasia": "WAKANDA TECH LAB",
+                "cidadeExterior": "",
+                "tipoLogradouro": "AVENIDA",
+                "cnaesSecundarias": [
+                    "5811500",
+                    "8599605",
+                    "8599604",
+                    "5229099",
+                    "4520001"
+                ],
+                "situacaoEspecial": "",
+                "situacaoCadastral": "02",
+                "dataSituacaoEspecial": "",
+                "dataSituacaoCadastral": "20221127",
+                "motivoSituacaoCadastral": "00",
+                "identificadorMatrizFilial": "1"
+            }
+        },
+        "socios": null,
+        "simplesMei": {
+            "mei": [
+                {
+                    "dataFim": "00000000",
+                    "dataInicio": "20221127"
+                }
+            ],
+            "simples": [
+                {
+                    "dataFim": "00000000",
+                    "dataInicio": "20221127"
+                }
+            ]
+        }
+    },
+    {
+        "empresa": {
+            "porteEmpresa": "05",
+            "capitalSocial": "18735169000155",
+            "cpfResponsavel": "00574104372",
+            "nomeEmpresarial": "ASGARDIAN FORGE ENTERPRISE - THOR ODINSON",
+            "naturezaJuridica": "2135",
+            "qualificacaoResponsavel": "50"
+        },
+        "estabelecimentos": {
+            "07328560000119": {
+                "uf": "ASGARD",
+                "cep": "70070070",
+                "ddd1": "",
+                "ddd2": "",
+                "pais": "NOVE_REINOS",
+                "email": "royalforge@asgard.gov",
+                "bairro": "VALHALLA DISTRICT",
+                "numero": "1",
+                "municipio": "GOLDEN_PALACE",
+                "telefone1": "",
+                "telefone2": "",
+                "cnaeFiscal": "4781400",
+                "logradouro": "BIFRÖST MAIN ROAD",
+                "complemento": "PORTÃO DO ARCO-ÍRIS",
+                "dataCadastro": "19831118",
+                "nomeFantasia": "THE ROYAL FORGE",
+                "cidadeExterior": "",
+                "tipoLogradouro": "RODOVIA",
+                "cnaesSecundarias": null,
+                "situacaoEspecial": "",
+                "situacaoCadastral": "08",
+                "dataSituacaoEspecial": "",
+                "dataSituacaoCadastral": "20081231",
+                "motivoSituacaoCadastral": "71",
+                "identificadorMatrizFilial": "1"
+            }
+        },
+        "socios": null,
+        "simplesMei": null
+    },
+     {
+        "empresa": {
+            "porteEmpresa": "03",
+            "capitalSocial": "00000005000000",
+            "cpfResponsavel": "12345678901",
+            "nomeEmpresarial": "XAVIER INSTITUTE RESEARCH FOR GIFTED STUDENTS",
+            "naturezaJuridica": "2135",
+            "qualificacaoResponsavel": "50"
+        },
+        "estabelecimentos": {
+            "27434919000140": {
+                "uf": "NY",
+                "cep": "10504000",
+                "ddd1": "01",
+                "ddd2": "",
+                "pais": "USA",
+                "email": "institute@xavier.edu",
+                "bairro": "SALEM CENTER",
+                "numero": "1407",
+                "municipio": "WESTCHESTER",
+                "telefone1": "00000000",
+                "telefone2": "",
+                "cnaeFiscal": "7319002",
+                "logradouro": "XAVIER MANSION ROAD",
+                "complemento": "INSTITUTE WING",
+                "dataCadastro": "20010501",
+                "nomeFantasia": "XAVIER'S SCHOOL",
+                "cidadeExterior": "",
+                "tipoLogradouro": "AVENIDA",
+                "cnaesSecundarias": [
+                    "8599605",
+                    "8599604"
+                ],
+                "situacaoEspecial": "",
+                "situacaoCadastral": "02",
+                "dataSituacaoEspecial": "",
+                "dataSituacaoCadastral": "20010501",
+                "motivoSituacaoCadastral": "00",
+                "identificadorMatrizFilial": "1"
+            }
+        },
+        "socios": null,
+        "simplesMei": null
+    }
+
+
+
 ]

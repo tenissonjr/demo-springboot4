@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * Record que mapeia a estrutura do JSON fornecido pelo .
  */
-public record ConsultaCnpjDataPrevResponseDTO(
+public record ConsultaDataPrevCnpjResponseDTO(
     Empresa empresa
     ,Map<String, Estabelecimento> estabelecimentos,
     Map<String, Socio> socios,

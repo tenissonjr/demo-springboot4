@@ -4,11 +4,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.service.annotation.GetExchange;
 import org.springframework.web.service.annotation.HttpExchange;
 
-import com.example.demospringboot4.bcnpj.dto.ConsultaCnpjDataPrevResponseDTO;
+import com.example.demospringboot4.bcnpj.dto.ConsultaDataPrevCnpjResponseDTO;
 
 @HttpExchange("/api/v1/cnpj")
-public interface ICnpjDataPrevHttpClient {
+public interface IDataPrevCnpjHttpClient {
 
     @GetExchange("/{cnpj}")
-    ConsultaCnpjDataPrevResponseDTO consultarCnpjDataPrev(@PathVariable String cnpj);
+    ConsultaDataPrevCnpjResponseDTO consultarCnpjDataPrev(@PathVariable String cnpj);
 }
