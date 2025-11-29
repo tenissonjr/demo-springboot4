@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.example.demospringboot4.bcnpj.dto.ConsultaDataPrevCnpjResponseDTO.Estabelecimento;
 import com.example.demospringboot4.bcnpj.views.CnpjViews;
+import com.example.demospringboot4.infraestructure.exception.ApplicationException;
 import com.fasterxml.jackson.annotation.JsonView;
 
 public record ConsultaCnpjResponseDTO(
@@ -35,8 +36,8 @@ public record ConsultaCnpjResponseDTO(
 
 
     public static ConsultaCnpjResponseDTO valueOf(ConsultaDataPrevCnpjResponseDTO bcnpjResponseDTO) {
-		String cnpj =  bcnpjResponseDTO.estabelecimentos().keySet().stream().findFirst().orElseThrow(() -> new IllegalArgumentException("Estabelecimento não encontrado"));
-        Estabelecimento estabelecimento = bcnpjResponseDTO.estabelecimentos().values().stream().findFirst().orElseThrow(()->new IllegalArgumentException("Estabelecimento não encontrado"));
+		String cnpj =  bcnpjResponseDTO.estabelecimentos().keySet().stream().findFirst().orElseThrow(() -> new ApplicationException("Estabelecimento não encontrado"));
+        Estabelecimento estabelecimento = bcnpjResponseDTO.estabelecimentos().values().stream().findFirst().orElseThrow(()->new ApplicationException("Estabelecimento não encontrado"));
 
         return new ConsultaCnpjResponseDTO(
 			//Empresa

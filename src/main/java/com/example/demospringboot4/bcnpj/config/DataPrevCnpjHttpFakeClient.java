@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 
 import com.example.demospringboot4.bcnpj.dto.ConsultaDataPrevCnpjResponseDTO;
 import com.example.demospringboot4.bcnpj.interfaces.IDataPrevCnpjHttpClient;
-import com.example.demospringboot4.infraestructure.exception.ApplicationResourceNotFound;
+import com.example.demospringboot4.infraestructure.exception.ApplicationEntityNotFound;
 
 import tools.jackson.core.JacksonException;
 import tools.jackson.core.type.TypeReference;
@@ -80,9 +80,9 @@ public class DataPrevCnpjHttpFakeClient implements CommandLineRunner, IDataPrevC
             return this.cnpjsFake.stream()
                     .filter(c -> c.estabelecimentos().containsKey(cnpj))
                     .findFirst()
-                    .orElseThrow(() -> new ApplicationResourceNotFound("CNPJ não encontrado: " + cnpj));
+                    .orElseThrow(() -> new ApplicationEntityNotFound("CNPJ não encontrado: " + cnpj));
         }
-        throw new ApplicationResourceNotFound("Nenhum CNPJ carregado na memória.");
+        throw new ApplicationEntityNotFound("Nenhum CNPJ carregado na memória.");
     }
 
 

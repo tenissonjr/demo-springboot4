@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 @Validated
 public class CnpjService  {
     
-    private final Logger log = LoggerFactory.getLogger(CnpjService.class);
+    private static final Logger log = LoggerFactory.getLogger(CnpjService.class);
 
      private final IDataPrevCnpjHttpClient bCnpjHttpClient;
 
@@ -25,22 +25,13 @@ public class CnpjService  {
         this.bCnpjHttpClient = bCnpjHttpClient;
     }
 
-    public ConsultaDataPrevCnpjResponseDTO consultarCnpjOriginal(@CnpjValido String cnpj) {
-        log.info("Consultando dados originais CNPJ: {}", cnpj);
-        return bCnpjHttpClient.consultarCnpjDataPrev(cnpj);
-    }
-
     @JsonView(CnpjViews.Basico.class)
-    public ConsultaCnpjResponseDTO consultarCnpjBasico(@CnpjValido String cnpj) {
-        log.info("Transformando dados  do  CNPJ: {}", cnpj);
-        return ConsultaCnpjResponseDTO.valueOf(this.consultarCnpjOriginal(cnpj));
+    public ConsultaCnpjResponseDTO consultarCnpj(@CnpjValido String cnpj) {
+        log.info("Transformando dados do  CNPJ: {}", cnpj);
+        return ConsultaCnpjResponseDTO.valueOf(this.bCnpjHttpClient.consultarCnpjDataPrev(cnpj));
     }
 
-    @JsonView(CnpjViews.Completo.class)
-    public ConsultaCnpjResponseDTO consultarCnpjCompleto(@CnpjValido String cnpj) {
-        log.info("Transformando dados  do  CNPJ: {}", cnpj);
-        return ConsultaCnpjResponseDTO.valueOf(this.consultarCnpjOriginal(cnpj));
-    }
+
 
 
     
