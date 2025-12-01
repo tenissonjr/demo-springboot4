@@ -1,6 +1,7 @@
 package com.example.demospringboot4.infraestructure.config;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -54,9 +55,9 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.NO_CONTENT).body(error);
     }
 
-    @ExceptionHandler(ConstraintViolationException.class)
+    @ExceptionHandler(value =   {ConstraintViolationException.class, DateTimeParseException.class })
     public ResponseEntity<ErrorDTO> handleConstraintViolationException(ConstraintViolationException ex) {
-        log.error("Erro de vali8dação: {}", ex.getMessage(), ex);
+        log.error("Erro de validação: {}", ex.getMessage(), ex);
         List<String> messages = ex.getConstraintViolations()
             .stream()
             .map(violation -> violation.getMessage())
