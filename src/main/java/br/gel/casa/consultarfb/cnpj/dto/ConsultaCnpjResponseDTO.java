@@ -62,9 +62,9 @@ public record ConsultaCnpjResponseDTO(
 			estabelecimento.pais(),
 			estabelecimento.ddd1(),
 			//Mei
-			bcnpjResponseDTO.simplesMei() != null ? bcnpjResponseDTO.simplesMei().mei() : Collections.emptyList()	,
+			bcnpjResponseDTO.simplesMei() != null && bcnpjResponseDTO.simplesMei().mei() !=null ? bcnpjResponseDTO.simplesMei().mei() : Collections.emptyList()	,
 			//Simples Nacional
-			bcnpjResponseDTO.simplesMei() != null ? bcnpjResponseDTO.simplesMei().simples() : Collections.emptyList()
+			bcnpjResponseDTO.simplesMei() != null && bcnpjResponseDTO.simplesMei().simples() != null ? bcnpjResponseDTO.simplesMei().simples() : Collections.emptyList()
 
 		);
     }
