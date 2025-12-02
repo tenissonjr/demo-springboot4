@@ -1,12 +1,12 @@
-package br.leg.casa.bcnpj.dto;
+package br.gel.casa.consultarfb.cnpj.dto;
 
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
-import br.leg.casa.bcnpj.dto.ConsultaDataPrevCnpjResponseDTO.Estabelecimento;
-import br.leg.casa.bcnpj.views.CnpjViews;
-import br.leg.casa.infraestructure.exception.ApplicationException;
+import br.gel.casa.consultarfb.cnpj.dto.ConsultaDataPrevCnpjResponseDTO.Estabelecimento;
+import br.gel.casa.consultarfb.cnpj.views.CnpjViews;
+import br.gel.casa.consultarfb.infraestructure.exception.ApplicationException;
 
 public record ConsultaCnpjResponseDTO(
 	//Empresa

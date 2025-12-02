@@ -1,4 +1,4 @@
-package br.leg.casa.infraestructure.config;
+package br.gel.casa.consultarfb.infraestructure.config;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeParseException;
@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.client.HttpClientErrorException;
 
-import br.leg.casa.infraestructure.dto.ErrorDTO;
-import br.leg.casa.infraestructure.exception.ApplicationEntityNotFound;
-import br.leg.casa.infraestructure.exception.ApplicationException;
+import br.gel.casa.consultarfb.infraestructure.dto.ErrorDTO;
+import br.gel.casa.consultarfb.infraestructure.exception.ApplicationEntityNotFound;
+import br.gel.casa.consultarfb.infraestructure.exception.ApplicationException;
 import jakarta.validation.ConstraintViolationException;
 
 @RestControllerAdvice

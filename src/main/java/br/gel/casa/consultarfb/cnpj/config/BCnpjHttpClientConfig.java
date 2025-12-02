@@ -1,4 +1,4 @@
-package br.leg.casa.bcnpj.config;
+package br.gel.casa.consultarfb.cnpj.config;
 
 import java.util.Base64;
 
@@ -11,7 +11,7 @@ import org.springframework.web.client.RestClient;
 import org.springframework.web.client.support.RestClientAdapter;
 import org.springframework.web.service.invoker.HttpServiceProxyFactory;
 
-import br.leg.casa.bcnpj.interfaces.IDataPrevCnpjHttpClient;
+import br.gel.casa.consultarfb.cnpj.interfaces.IDataPrevCnpjHttpClient;
 
 @Configuration
 class BCnpjHttpClientConfig {

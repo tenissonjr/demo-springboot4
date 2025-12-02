@@ -1,4 +1,4 @@
-package br.leg.casa.bcnpj.views;
+package br.gel.casa.consultarfb.cnpj.views;
 
 public class CnpjViews {
     public interface Basico {} 

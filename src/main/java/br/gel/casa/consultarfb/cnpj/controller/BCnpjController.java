@@ -1,4 +1,4 @@
-package br.leg.casa.bcnpj.controller;
+package br.gel.casa.consultarfb.cnpj.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
-import br.leg.casa.bcnpj.dto.ConsultaCnpjResponseDTO;
-import br.leg.casa.bcnpj.service.CnpjService;
-import br.leg.casa.bcnpj.validation.CnpjValido;
-import br.leg.casa.bcnpj.views.CnpjViews;
+import br.gel.casa.consultarfb.cnpj.dto.ConsultaCnpjResponseDTO;
+import br.gel.casa.consultarfb.cnpj.service.CnpjService;
+import br.gel.casa.consultarfb.cnpj.validation.CnpjValido;
+import br.gel.casa.consultarfb.cnpj.views.CnpjViews;
 
 @RestController
 @RequestMapping("/api/cnpj")

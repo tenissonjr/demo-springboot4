@@ -1,4 +1,4 @@
-package br.leg.casa.bcnpj.validation;
+package br.gel.casa.consultarfb.cnpj.validation;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

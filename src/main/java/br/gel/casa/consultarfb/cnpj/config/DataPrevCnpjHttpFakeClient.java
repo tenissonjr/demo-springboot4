@@ -1,4 +1,4 @@
-package br.leg.casa.bcnpj.config;
+package br.gel.casa.consultarfb.cnpj.config;
 
 import java.io.IOException;
 import java.util.List;
@@ -11,9 +11,9 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Component;
 
-import br.leg.casa.bcnpj.dto.ConsultaDataPrevCnpjResponseDTO;
-import br.leg.casa.bcnpj.interfaces.IDataPrevCnpjHttpClient;
-import br.leg.casa.infraestructure.exception.ApplicationEntityNotFound;
+import br.gel.casa.consultarfb.cnpj.dto.ConsultaDataPrevCnpjResponseDTO;
+import br.gel.casa.consultarfb.cnpj.interfaces.IDataPrevCnpjHttpClient;
+import br.gel.casa.consultarfb.infraestructure.exception.ApplicationEntityNotFound;
 import tools.jackson.core.JacksonException;
 import tools.jackson.core.type.TypeReference;
 import tools.jackson.databind.json.JsonMapper;

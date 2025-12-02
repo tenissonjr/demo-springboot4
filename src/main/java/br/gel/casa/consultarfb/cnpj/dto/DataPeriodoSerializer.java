@@ -1,4 +1,4 @@
-package br.leg.casa.bcnpj.dto;
+package br.gel.casa.consultarfb.cnpj.dto;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

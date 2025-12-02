@@ -1,4 +1,4 @@
-package br.leg.casa.bcnpj.service;
+package br.gel.casa.consultarfb.cnpj.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,10 +7,10 @@ import org.springframework.validation.annotation.Validated;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
-import br.leg.casa.bcnpj.dto.ConsultaCnpjResponseDTO;
-import br.leg.casa.bcnpj.interfaces.IDataPrevCnpjHttpClient;
-import br.leg.casa.bcnpj.validation.CnpjValido;
-import br.leg.casa.bcnpj.views.CnpjViews;
+import br.gel.casa.consultarfb.cnpj.dto.ConsultaCnpjResponseDTO;
+import br.gel.casa.consultarfb.cnpj.interfaces.IDataPrevCnpjHttpClient;
+import br.gel.casa.consultarfb.cnpj.validation.CnpjValido;
+import br.gel.casa.consultarfb.cnpj.views.CnpjViews;
 
 
 @Service

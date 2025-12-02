@@ -1,4 +1,4 @@
-package br.leg.casa.bcnpj.dto;
+package br.gel.casa.consultarfb.cnpj.dto;
 
 import java.util.List;
 import java.util.Map;

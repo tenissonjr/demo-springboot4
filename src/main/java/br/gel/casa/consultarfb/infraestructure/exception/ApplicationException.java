@@ -1,4 +1,4 @@
-package br.leg.casa.infraestructure.exception;
+package br.gel.casa.consultarfb.infraestructure.exception;
 
 public class ApplicationException extends RuntimeException {
     public ApplicationException(String message) {
