@@ -3,6 +3,8 @@ package br.gel.casa.consultarfb.cnpj.dto;
 import java.util.List;
 import java.util.Map;
 
+import tools.jackson.databind.annotation.JsonDeserialize;
+
 /**
  * Record que mapeia a estrutura do JSON fornecido pelo .
  */
@@ -40,6 +42,7 @@ public record ConsultaDataPrevCnpjResponseDTO(
         String nomeFantasia,
         String cidadeExterior,
         String tipoLogradouro,
+        @JsonDeserialize(using = EmptyStringAsEmptyListDeserializer.class)
         List<String> cnaesSecundarias,
         String situacaoEspecial,
         String situacaoCadastral,
@@ -47,7 +50,9 @@ public record ConsultaDataPrevCnpjResponseDTO(
         String dataSituacaoCadastral,
         String motivoSituacaoCadastral,
         String identificadorMatrizFilial
-    ) {}
+    ) {
+
+    }
 
     public record Socio(
         String pais,

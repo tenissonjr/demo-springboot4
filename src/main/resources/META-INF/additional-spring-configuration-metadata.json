@@ -6,11 +6,6 @@
     "defaultValue": false
   },
   {
-    "name": "ibge.base.url",
-    "type": "java.lang.String",
-    "description": "URL base dos serviços do IBGE"
-  },
-  {
     "name": "bcnpj.base.url",
     "type": "java.lang.String",
     "description": "URL base dos serviços do B-CNPJ da DataPrev"
@@ -18,16 +13,12 @@
   {
     "name": "bcnpj.credentials.username",
     "type": "java.lang.String",
-    "description": "A description for 'bcnpj.credentials.username'"
+    "description": "Usuário para autenticação nos serviços do B-CNPJ da DataPrev"
   },
   {
     "name": "bcnpj.credentials.password",
     "type": "java.lang.String",
-    "description": "A description for 'bcnpj.credentials.password'"
+    "description": "Senha para autenticação nos serviços do B-CNPJ da DataPrev"
   }
-]}{
-    "name": "bcnpj.credentials.password",
-    "type": "java.lang.String",
-    "description": "A description for 'bcnpj.credentials.password'"
-  }
+
 ]}

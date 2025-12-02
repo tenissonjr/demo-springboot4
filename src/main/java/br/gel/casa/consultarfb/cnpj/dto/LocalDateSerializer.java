@@ -10,12 +10,12 @@ import tools.jackson.core.JsonParser;
 import tools.jackson.databind.DeserializationContext;
 import tools.jackson.databind.deser.std.StdDeserializer;
 
-class DataPeriodoSerializer extends StdDeserializer<LocalDate> {
+class LocalDateSerializer extends StdDeserializer<LocalDate> {
 
    private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyyMMdd");
     private static final String ZERO_DATE = "00000000";
 
-    public DataPeriodoSerializer() { 
+    public LocalDateSerializer() { 
         super(LocalDate.class); 
     }
 
