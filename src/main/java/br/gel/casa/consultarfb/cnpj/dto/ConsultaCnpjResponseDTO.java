@@ -1,5 +1,6 @@
 package br.gel.casa.consultarfb.cnpj.dto;
 
+import java.util.Collections;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonView;
@@ -61,9 +62,9 @@ public record ConsultaCnpjResponseDTO(
 			estabelecimento.pais(),
 			estabelecimento.ddd1(),
 			//Mei
-			bcnpjResponseDTO.simplesMei() != null ? bcnpjResponseDTO.simplesMei().mei() : null,
+			bcnpjResponseDTO.simplesMei() != null ? bcnpjResponseDTO.simplesMei().mei() : Collections.emptyList()	,
 			//Simples Nacional
-			bcnpjResponseDTO.simplesMei() != null ? bcnpjResponseDTO.simplesMei().simples() : null
+			bcnpjResponseDTO.simplesMei() != null ? bcnpjResponseDTO.simplesMei().simples() : Collections.emptyList()
 
 		);
     }
