@@ -27,7 +27,7 @@ class BCpfHttpClientConfig {
 
 
 	@Bean
-	public RestClientHttpServiceGroupConfigurer groupConfigurer() {
+	public RestClientHttpServiceGroupConfigurer dataPrevCpfHttpClientConfigurer() {
 		return groups -> {
 			groups.forEachClient((group, clientBuilder) ->
 					clientBuilder

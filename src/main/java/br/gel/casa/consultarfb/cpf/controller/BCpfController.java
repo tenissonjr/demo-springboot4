@@ -19,8 +19,8 @@ import br.gel.casa.consultarfb.cpf.views.CpfViews;
 
 @RestController
 @RequestMapping("/api/cpf")
-@ConcurrencyLimit(value = 5)
 @Validated
+@ConcurrencyLimit(50)
 public class BCpfController {
 
     private static final Logger log = LoggerFactory.getLogger(BCpfController.class);
@@ -48,9 +48,9 @@ public class BCpfController {
 
     @GetMapping("/{cpf}/completo")
     @JsonView(CpfViews.Completo.class)
-    public ConsultaCpfResponseDTO consultarCpfCompleto(@PathVariable @CpfValido String cpf) {
+    public ResponseEntity<ConsultaCpfResponseDTO> consultarCpfCompleto(@PathVariable @CpfValido String cpf) {
         log.info("Delegando a consulta de dados completos do CPF: {}", cpf);
-        return cpfService.consultarCpf(cpf);
+        return ResponseEntity.ok(cpfService.consultarCpf(cpf));
     }
 
 }

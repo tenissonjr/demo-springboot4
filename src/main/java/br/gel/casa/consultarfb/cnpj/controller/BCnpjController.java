@@ -19,8 +19,8 @@ import br.gel.casa.consultarfb.cnpj.views.CnpjViews;
 
 @RestController
 @RequestMapping("/api/cnpj")
-@ConcurrencyLimit(value = 5)
 @Validated
+@ConcurrencyLimit(50)
 public class BCnpjController {
 
     private static final Logger log = LoggerFactory.getLogger(BCnpjController.class);
