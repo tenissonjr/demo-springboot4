@@ -9,5 +9,11 @@ bcnpj:
   credentials:
     username: ${env:bcnpj_username}
     password: ${env:bcnpj_password}
+bcpf:
+  base:
+    url: ${env:bcpf_url}
+  credentials:
+    username: ${env:bcpf_username}
+    password: ${env:bcpf_password}
 
 

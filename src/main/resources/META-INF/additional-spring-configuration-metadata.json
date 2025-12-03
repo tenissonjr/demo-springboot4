@@ -19,6 +19,20 @@
     "name": "bcnpj.credentials.password",
     "type": "java.lang.String",
     "description": "Senha para autenticação nos serviços do B-CNPJ da DataPrev"
+  },
+  {
+    "name": "bcpf.base.url",
+    "type": "java.lang.String",
+    "description": "URL base dos serviços do B-CPF da DataPrev"
+  },
+  {
+    "name": "bcpf.credentials.username",
+    "type": "java.lang.String",
+    "description": "Usuário para autenticação nos serviços do B-CPF da DataPrev"
+  },
+  {
+    "name": "bcpf.credentials.password",
+    "type": "java.lang.String",
+    "description": "Senha para autenticação nos serviços do B-CPF da DataPrev"
   }
-
 ]}
