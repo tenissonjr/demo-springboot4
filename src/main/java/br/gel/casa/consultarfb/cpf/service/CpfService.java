@@ -8,6 +8,7 @@ import org.springframework.validation.annotation.Validated;
 import br.gel.casa.consultarfb.cpf.dto.ConsultaCpfResponseDTO;
 import br.gel.casa.consultarfb.cpf.interfaces.IDataPrevCpfHttpClient;
 import br.gel.casa.consultarfb.cpf.validation.CpfValido;
+import br.gel.casa.consultarfb.infraestructure.exception.ApplicationEntityNotFound;
 
 @Service
 @Validated
@@ -23,6 +24,10 @@ public class CpfService  {
 
     public ConsultaCpfResponseDTO consultarCpf(@CpfValido String cpf) {
         log.info("Transformando dados do CPF: {}", cpf);
-        return ConsultaCpfResponseDTO.valueOf(this.dataPrevCpfHttpClient.consultarCpfDataPrev(cpf),"1");
+        var response = this.dataPrevCpfHttpClient.consultarCpfDataPrev(cpf);
+        if(response == null) {
+            throw new ApplicationEntityNotFound("Usuário com CPF " + cpf + " não encontrado.");
+        }
+        return ConsultaCpfResponseDTO.valueOf(response,"1");
     }
 }
