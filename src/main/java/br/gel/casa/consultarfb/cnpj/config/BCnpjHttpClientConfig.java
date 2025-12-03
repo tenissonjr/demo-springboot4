@@ -1,51 +1,37 @@
 package br.gel.casa.consultarfb.cnpj.config;
 
-import java.util.Base64;
+import static br.gel.casa.consultarfb.infraestructure.utils.EncodeUtil.encodeBasic;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.http.HttpHeaders;
-import org.springframework.web.client.RestClient;
-import org.springframework.web.client.support.RestClientAdapter;
-import org.springframework.web.service.invoker.HttpServiceProxyFactory;
+import org.springframework.web.client.support.RestClientHttpServiceGroupConfigurer;
+import org.springframework.web.service.registry.ImportHttpServices;
 
 import br.gel.casa.consultarfb.cnpj.interfaces.IDataPrevCnpjHttpClient;
 
 @Configuration
+@Profile("prd")
+@ImportHttpServices(group = "b-cnpj", types = { IDataPrevCnpjHttpClient.class })
 class BCnpjHttpClientConfig {
 
     @Value("${bcnpj.base.url}")
     private String bcnpjBaseUrl;
 
     @Value("${bcnpj.credentials.username}")
-    private String username;
+    private String bcnpjUsername;
 
     @Value("${bcnpj.credentials.password}")
-    private String password;
+    private String bcnpjPassword;
 
-    private String encodeBasic(String username, String password) {
-        String credentials = username + ":" + password;
-        return "Basic " + Base64.getEncoder().encodeToString(credentials.getBytes());
-    }
-
-
-    @Profile("prd")
     @Bean
-    public IDataPrevCnpjHttpClient dataPrevCnpjHttpClient() {
-
-        // Configura o RestClient com a URL base da API do BCnpj
-        var restClient = RestClient.builder()
-                .baseUrl(bcnpjBaseUrl)
-                .defaultHeader(HttpHeaders.AUTHORIZATION, encodeBasic(username, password))
-                .build();
-
-        // Retorna um objeto criado pelo Spring Boot que implementa a interface IBCnpjService
-        return HttpServiceProxyFactory.builder()
-                .exchangeAdapter(RestClientAdapter.create(restClient))
-                .build()
-                .createClient(IDataPrevCnpjHttpClient.class);
+    public RestClientHttpServiceGroupConfigurer groupConfigurer() {
+        return groups -> {
+            groups.filterByName("b-cnpj").forEachClient((group, clientBuilder) -> clientBuilder
+                    .baseUrl(bcnpjBaseUrl)
+                    .defaultHeader(HttpHeaders.AUTHORIZATION, encodeBasic(bcnpjUsername, bcnpjPassword)).build());
+        };
     }
-
 }
