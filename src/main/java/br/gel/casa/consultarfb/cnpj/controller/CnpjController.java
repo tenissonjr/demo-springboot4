@@ -21,13 +21,13 @@ import br.gel.casa.consultarfb.cnpj.views.CnpjViews;
 @RequestMapping("/api/cnpj")
 @Validated
 @ConcurrencyLimit(50)
-public class BCnpjController {
+public class CnpjController {
 
-    private static final Logger log = LoggerFactory.getLogger(BCnpjController.class);
+    private static final Logger log = LoggerFactory.getLogger(CnpjController.class);
 
     private final CnpjService cnpjService;
 
-    public BCnpjController(CnpjService cnpjService) {
+    public CnpjController(CnpjService cnpjService) {
         this.cnpjService = cnpjService;
     }
 

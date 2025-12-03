@@ -21,13 +21,13 @@ import br.gel.casa.consultarfb.cpf.views.CpfViews;
 @RequestMapping("/api/cpf")
 @Validated
 @ConcurrencyLimit(50)
-public class BCpfController {
+public class CpfController {
 
-    private static final Logger log = LoggerFactory.getLogger(BCpfController.class);
+    private static final Logger log = LoggerFactory.getLogger(CpfController.class);
 
     private final CpfService cpfService;
 
-    public BCpfController(CpfService cpfService) {
+    public CpfController(CpfService cpfService) {
         this.cpfService = cpfService;
     }
 
