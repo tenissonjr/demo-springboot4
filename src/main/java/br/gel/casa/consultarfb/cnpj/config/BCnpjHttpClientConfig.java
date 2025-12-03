@@ -29,7 +29,7 @@ class BCnpjHttpClientConfig {
     @Bean
     public RestClientHttpServiceGroupConfigurer groupConfigurer() {
         return groups -> {
-            groups.filterByName("b-cnpj").forEachClient((group, clientBuilder) -> clientBuilder
+            groups.forEachClient((group, clientBuilder) -> clientBuilder
                     .baseUrl(bcnpjBaseUrl)
                     .defaultHeader(HttpHeaders.AUTHORIZATION, encodeBasic(bcnpjUsername, bcnpjPassword)).build());
         };

@@ -2,6 +2,7 @@ package br.gel.casa.consultarfb.cpf.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.ResponseEntity;
 import org.springframework.resilience.annotation.ConcurrencyLimit;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,16 +33,16 @@ public class BCpfController {
 
     @GetMapping("/{cpf}/basico")
     @JsonView(CpfViews.Basico.class)    
-    public ConsultaCpfResponseDTO consultarCpfBasico(@PathVariable @CpfValido String cpf) {
+    public ResponseEntity<ConsultaCpfResponseDTO> consultarCpfBasico(@PathVariable @CpfValido String cpf) {
         log.info("Delegando a consulta de dados básicos do CPF: {}", cpf);
-        return cpfService.consultarCpf(cpf);
+        return ResponseEntity.ok(cpfService.consultarCpf(cpf));
     }
 
     @GetMapping("/{cpf}/complemento")
     @JsonView(CpfViews.Complemento.class)
-    public ConsultaCpfResponseDTO consultarCpfComplemento(@PathVariable @CpfValido String cpf) {
+    public ResponseEntity<ConsultaCpfResponseDTO> consultarCpfComplemento(@PathVariable @CpfValido String cpf) {
         log.info("Delegando a consulta de dados completos do CPF: {}", cpf);
-        return cpfService.consultarCpf(cpf);
+        return ResponseEntity.ok(cpfService.consultarCpf(cpf));
     }
 
 

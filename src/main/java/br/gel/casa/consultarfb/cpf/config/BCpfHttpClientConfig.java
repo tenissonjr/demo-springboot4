@@ -29,7 +29,7 @@ class BCpfHttpClientConfig {
 	@Bean
 	public RestClientHttpServiceGroupConfigurer groupConfigurer() {
 		return groups -> {
-			groups.filterByName("b-cpf").forEachClient((group, clientBuilder) ->
+			groups.forEachClient((group, clientBuilder) ->
 					clientBuilder
                     .baseUrl(bcpfBaseUrl)
                     .defaultHeader(HttpHeaders.AUTHORIZATION, encodeBasic(bcpfUsername, bcpfPassword)).build());
