@@ -2,6 +2,7 @@ package br.gel.casa.consultarfb.cnpj.config;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Random;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,6 +29,7 @@ public class DataPrevCnpjHttpFakeClient implements CommandLineRunner, IDataPrevC
     private final JsonMapper jsonMapper;
     private final ResourceLoader resourceLoader;
     private List<ConsultaDataPrevCnpjResponseDTO> cnpjsFake;
+    private final Random random = new Random();
 
     public DataPrevCnpjHttpFakeClient(JsonMapper jsonMapper, ResourceLoader resourceLoader) {
         this.jsonMapper = jsonMapper;
@@ -75,6 +77,12 @@ public class DataPrevCnpjHttpFakeClient implements CommandLineRunner, IDataPrevC
 
     @Override
     public ConsultaDataPrevCnpjResponseDTO consultarCnpjDataPrev(String cnpj) {
+
+             //Simular falha intermitente
+            if (random.nextDouble() > 0.5 ) {
+                throw new RuntimeException("Falha intermitente simulada na consulta de CNPJ: " + cnpj);
+            }
+
         if(this.cnpjsFake != null) {
             return this.cnpjsFake.stream()
                     .filter(c -> c.estabelecimentos().containsKey(cnpj))

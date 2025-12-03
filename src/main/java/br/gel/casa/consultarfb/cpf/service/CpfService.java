@@ -2,6 +2,7 @@ package br.gel.casa.consultarfb.cpf.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.resilience.annotation.Retryable;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
@@ -22,6 +23,12 @@ public class CpfService  {
         this.dataPrevCpfHttpClient = bCpfHttpClient;
     }
 
+    @Retryable(
+            excludes = ApplicationEntityNotFound.class,
+            maxRetries= 4,
+            delay = 1000, // 1-second delay
+            multiplier = 2 // double the delay for each retry attempt
+    )    
     public ConsultaCpfResponseDTO consultarCpf(@CpfValido String cpf) {
         log.info("Transformando dados do CPF: {}", cpf);
         var response = this.dataPrevCpfHttpClient.consultarCpfDataPrev(cpf);
