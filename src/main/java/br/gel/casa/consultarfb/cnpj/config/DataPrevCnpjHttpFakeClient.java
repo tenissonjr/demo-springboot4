@@ -59,7 +59,7 @@ public class DataPrevCnpjHttpFakeClient implements CommandLineRunner, IDataPrevC
             //Informar quantos CNPJs foram carregados
             log.info("Foram carregados {} CNPJs fakes na memória.", cnpjsFake.size());
             cnpjsFake.forEach(cnpj -> 
-                cnpj.estabelecimentos().keySet().forEach(System.out::println)
+                cnpj.estabelecimentos().keySet().forEach(log::info)
             );
 
         } catch (JacksonException e) {

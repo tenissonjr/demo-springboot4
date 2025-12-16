@@ -58,8 +58,8 @@ public class DataPrevCpfHttpFakeClient implements CommandLineRunner, IDataPrevCp
             //Informar quantos CPFs foram carregados
             log.info("Foram carregados {} CPFs fakes na mem\u00f3ria.", cpfsFake.size());
             //Lista as propriedades cpf carregadas da lista
-            cpfsFake.forEach(cpf -> 
-                System.out.println(cpf.cpf())
+            cpfsFake.forEach(item -> 
+                log.info(item.cpf())
             );
             
             

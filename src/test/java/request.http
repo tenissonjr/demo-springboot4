@@ -1,0 +1,39 @@
+### Consulta  CNPJ 27434919000140
+### Dados básicos
+GET http://localhost:8080/api/cnpj/27434919000140/basico
+### Dados completos
+GET http://localhost:8080/api/cnpj/27434919000140/completo
+
+
+### Consulta  CNPJ 55919135000147
+### Dados básicos
+GET http://localhost:8080/api/cnpj/55919135000147/basico
+### Dados completos
+GET http://localhost:8080/api/cnpj/55919135000147/completo
+
+
+
+### Consulta  CPF 00546883109
+### Dados básicos
+GET http://localhost:8080/api/cpf/00546883109/basico
+### Dados complementos
+GET http://localhost:8080/api/cpf/00546883109/complemento
+### Dados completos Versão Corrente
+GET http://localhost:8080/api/cpf/00546883109/completo
+
+
+### Dados completos Versão Corrente Versão Anterior
+GET http://localhost:8080/api/cpf/00546883109/completo
+X-Version : 1.0.0
+
+
+
+
+### Consulta  CPF 06111675818
+### Dados básicos
+GET http://localhost:8080/api/cpf/06111675818/basico
+### Dados complementos
+GET http://localhost:8080/api/cpf/06111675818/complemento
+### Dados completos
+GET http://localhost:8080/api/cpf/06111675818/completo
+

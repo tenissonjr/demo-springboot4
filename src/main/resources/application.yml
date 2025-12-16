@@ -1,6 +1,15 @@
 spring:
   application:
     name: demo-springboot4
+  mvc:
+    apiversion:
+      supported: 1.0.0,2.0.0
+      default: 2.0.0
+      use:
+        header: X-Version  
+  output:
+    ansi:
+      enabled: ALWAYS
   validation:
     use-lombok-nonnull: true
 bcnpj:
@@ -15,5 +24,12 @@ bcpf:
   credentials:
     username: ${env:bcpf_username}
     password: ${env:bcpf_password}
+logging:
+  pattern:
+    # console: "%d{yyyy-MM-dd HH:mm:ss.SSS}  %-5level  %logger{1.} - %msg%n"
+    console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%5level) %clr(--){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n%wEx"
 
+  level:
+    root: "warn"
+    br.gel.casa.consultarfb.cpf.config: "info"
 
