@@ -42,7 +42,7 @@ public class DataPrevCnpjHttpFakeClient implements CommandLineRunner, IDataPrevC
 
     @Override
     public void run(String... args) throws Exception {
-        log.info("Carregando CNPJs \uD83C\uDF69");
+        log.info("Carregando CNPJs");
 
         try {
             Resource resource = resourceLoader.getResource(CNPJS_JSON_PATH);

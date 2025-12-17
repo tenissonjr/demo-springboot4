@@ -6,10 +6,10 @@ import org.springframework.resilience.annotation.EnableResilientMethods;
 
 @SpringBootApplication
 @EnableResilientMethods
-public class ConsultaRfbApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ConsultaRfbApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 }

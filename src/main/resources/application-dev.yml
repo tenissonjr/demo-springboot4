@@ -1,0 +1,9 @@
+logging:
+  level:
+    root: "error"
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+
